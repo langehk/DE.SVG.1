@@ -50,7 +50,6 @@ function drawLine(x1, x2, y1, y2){
 
 function buildStarRow(noOfStars, html){
     let i = 1; 
-
     while(i < noOfStars){
         html.appendChild(drawStar());
         for (let p = 0; p < points.length; p+=2) {
@@ -85,21 +84,22 @@ function createUSA(){
 
     let starRow1 = 6; 
     let starRow2 = 5; 
-    let starRowTotal1 = 5; 
+    let starRowTotal1 = 6; 
     let starRowTotal2 = 4;
     
-    let v = 1; 
+    let v = 0; 
 
     while(v < starRowTotal1){
 
-        buildStarRow(starRow1, usaSVG);
-        points = pointsStart;
+        buildStarRow(starRow1, usaSVG);  
+
+        for (let p = 0; p < points.length; p+=2) {
+            points[p] = pointsStart[p]; 
+        }
         for (let p = 1; p < points.length; p+=2) {
             points[p] += 1.3; 
         }
-        
         v++;
-
     }
 
     
