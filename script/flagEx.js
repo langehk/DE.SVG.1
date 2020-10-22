@@ -2,6 +2,8 @@
 
 import{createSVG} from "../script/flags.js"; 
 import{createGreenland} from "../countries/greenland.js";
+import{createDenmark} from "../countries/denmark.js";
+import{createUSA} from "../countries/usa.js";
 
 // Flag of Greenland
 let greenland = document.getElementById("greenland");
@@ -14,4 +16,6 @@ createSVG(denmark);
 createSVG(usa);
 
 createGreenland();
+createDenmark();
+createUSA();
 
