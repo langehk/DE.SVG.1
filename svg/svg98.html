@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>svg</title>
+        <style>
+            svg {
+                border: 1px solid blue;
+                margin: 0;
+                padding: 0;
+                width: 300px;
+                height: 200px;
+            }
+        </style>
+        <script type='module'>
+            'use strict';
+            import {$, parabola} from './svg98.js';
+            window.addEventListener('load', function () {
+                parabola($('s0'), 1, -300, 0, 400);
+                parabola($('s1'), 1, -300, 20000, 200);
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+        <svg xmlns='http://www.w3.org/2000/svg'>
+                  <!-- M move to, in casu start drawing coord
+                       Q quadratic bezier, first coord is control point
+                                           second is end drwaing coord -->
+                  <path d='M0,0 Q150,53.33 300,0'
+                        fill='none' stroke='fuchsia' stroke-width='2'/>
+                  <circle cx='150' cy='53.33' r='2' fill='black'/>
+        </svg>
+        </div>
+        <div>
+            <svg id='s0' xmlns='http://www.w3.org/2000/svg'>
+                <!-- y = x(x-300) -->
+            </svg>
+        </div>
+        <div>
+            <svg id='s1' xmlns='http://www.w3.org/2000/svg'>
+                <!-- y = (x-100)(x-200) -->
+            </svg>
+        </div>
+    </body>
+</html>
