@@ -2,20 +2,19 @@
 
 let xmlns = 'http://www.w3.org/2000/svg';
 //let points = [0.325,0.0325,0.13,0.637,0.6175,0.2535,0.0325,0.2535,0.52,0.6435];
-let pointsStart = [0.325,0.0325,0.13,0.637,0.6175,0.2535,0.0325,0.2535,0.52,0.6435]; //Startpunkt til vores stjerne + størrelse
-let points = [0.325,0.0325,0.13,0.637,0.6175,0.2535,0.0325,0.2535,0.52,0.6435];
+let pointsStart = [
+    0.925, 0.2825,
+    0.73, 0.887,
+    1.2175,0.5035,
+    0.6325,0.5035,
+    1.12,0.8935]; //Startpunkt til vores stjerne + størrelse
 
-//Vi lægger 0.6 til i x-aksen for at ændre startposition
-for (let p = 0; p < points.length; p+=2) {
-    points[p] += 0.6; 
-    pointsStart[p] += 0.6; 
-}
-
-//Vi lægger 0.25 til i y-aksen for at ændre startposition
-for (let p = 1; p < points.length; p+=2) {
-    points[p] += 0.25; 
-    pointsStart[p] += 0.25; 
-}
+let points = [
+    0.925, 0.2825,
+    0.73, 0.887,
+    1.2175,0.5035,
+    0.6325,0.5035,
+    1.12,0.8935]; 
 
 //Funktion til at tegne stjerne
 function drawStar(){
@@ -102,8 +101,30 @@ function createUSA(){
         v++;
     }
 
-    
+    v=0;
 
+    for (let p = 1; p < points.length; p+=2) {
+        points[p] = pointsStart[p]; 
+    }
+    for (let p = 0; p < points.length; p++) {
+        points[p] += 0.65; 
+        pointsStart[p] += 0.65; 
+    }
+
+
+    while(v < starRowTotal2){
+
+        buildStarRow(starRow2, usaSVG);  
+
+        for (let p = 0; p < points.length; p+=2) {
+            points[p] = pointsStart[p]; 
+        }
+        for (let p = 1; p < points.length; p+=2) {
+            points[p] += 1.3; 
+        }
+        v++;
+    }
+    
     
 }
 
