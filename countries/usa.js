@@ -88,39 +88,39 @@ function createUSA(){
     
     let v = 0; 
 
-    while(v < starRowTotal1){
+    while(v < starRowTotal1){ //Vi bygger stjernerækker med 6 stjerner
 
-        buildStarRow(starRow1, usaSVG);  
+        buildStarRow(starRow1, usaSVG);  //Vi bygger stjernerækken ved at kalde buildStarRow
 
         for (let p = 0; p < points.length; p+=2) {
-            points[p] = pointsStart[p]; 
+            points[p] = pointsStart[p]; //Vi resetter x-aksen hver gang
         }
         for (let p = 1; p < points.length; p+=2) {
-            points[p] += 1.3; 
+            points[p] += 1.3; //Vi lægger til på y-aksen for at få næste række ned
         }
         v++;
     }
 
     v=0;
 
-    for (let p = 1; p < points.length; p+=2) {
+    for (let p = 1; p < points.length; p+=2) { //Vi resetter vores points
         points[p] = pointsStart[p]; 
     }
     for (let p = 0; p < points.length; p++) {
         points[p] += 0.65; 
-        pointsStart[p] += 0.65; 
+        pointsStart[p] += 0.65; //Vi lægger til i y-akse og x-akse, da vi skal tegne stjernerækker med 5 stjerner
     }
 
 
-    while(v < starRowTotal2){
+    while(v < starRowTotal2){ //Vi bygger stjernerækker med 5 stjerner
 
-        buildStarRow(starRow2, usaSVG);  
+        buildStarRow(starRow2, usaSVG);  //Vi bygger stjernerækken ved at kalde buildStarRow
 
         for (let p = 0; p < points.length; p+=2) {
-            points[p] = pointsStart[p]; 
+            points[p] = pointsStart[p];  //Vi resetter x-aksen 
         }
         for (let p = 1; p < points.length; p+=2) {
-            points[p] += 1.3; 
+            points[p] += 1.3; //Vi lægger til på y-aksen for at komme ned på næste linje
         }
         v++;
     }
