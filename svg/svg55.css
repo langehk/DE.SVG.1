@@ -1,7 +1,8 @@
-#svg {
+#svg, #svg1, #svg2 {
     position: relative;
     left: 0;
     top: 0;
+    width: 60px;
 }
 #vb {
     border: 2px solid blue;
@@ -11,9 +12,10 @@
 }
 
 #image0 circle {
-    fill: red;
+    
     stroke-width: 0;
 }
+
 div p {
     width: 700px;
 }

@@ -9,14 +9,19 @@
             import {anim} from '../svg/svg55.js';
 
             const go = function () {
-                anim('svg', 20, 3, 'vb')
+                anim('svg', 20, 5, 'vb')
+                anim('svg1', 20, 5, 'vb')
+                anim('svg2', 20, 5, 'vb')
             }
+    
             window.addEventListener('load', go);
         </script>
     </head>
     <body>
         <div id='vb'>
             <svg id='svg'><use href='#image0'/></svg>
+            <svg id='svg1'><use href='#image1'/></svg>      
+            <svg id='svg2'><use href='#image2'/></svg>    
         </div>
         <div>
             <p>
@@ -27,6 +32,12 @@
              <symbol id='image0'>
                  <circle cx="10" cy="10" r="10" fill="blue"/>
              </symbol>
+             <symbol id='image1'>
+                <circle cx="10" cy="10" r="10" fill="red"/>
+            </symbol>
+            <symbol id='image2'>
+                <circle cx="10" cy="10" r="10" fill="purple"/>
+            </symbol>
         </svg>
     </body>
 </html>
